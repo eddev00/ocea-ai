@@ -75,7 +75,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
             stiffness: 300,
             damping: 10,
           }}
-          style={{ pointerEvents: 'none' }}
+          style={{ pointerEvents: 'none', rotate : '90deg'}}
         >
           {value}%
         </motion.text>

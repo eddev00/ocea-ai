@@ -137,7 +137,7 @@ export default function Home() {
       <Image src={polygon} alt="" className="fixed top-0" />
       <Image src={deco} alt="" className="fixed top-20 hidden md:flex" />
 
-      {/* Hero Section with Framer Motion */}
+      {/* Hero Section with Framer Motionhref='https://x.com/ocea_v1?s=21' rel="noopener noreferrer"   target="_blank" */}
       <motion.div
         initial="hidden"
         animate="visible"
@@ -151,6 +151,7 @@ export default function Home() {
         />
 
         {/* Animated Button */}
+        <Link href='https://x.com/ocea_v1?s=21' rel="noopener noreferrer"   target="_blank">
         <motion.div
           variants={heroItemVariants}
           className="cursor-pointer button font-medium text-base font-inter text-[#333333]"
@@ -158,6 +159,7 @@ export default function Home() {
           <span>Agent Status</span>
           <div className="status-dot"></div>
         </motion.div>
+        </Link>
 
         {/* Animated Title */}
         <motion.div

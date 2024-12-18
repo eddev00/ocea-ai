@@ -159,13 +159,13 @@ export default function Home() {
 
         {/* Animated Title */}
         <motion.div
-          variants={heroItemVariants}
-          className="flex flex-col font-inter font-semibold text-6xl max-w-[700px] text-[#333333]"
-        >
-          <span className="text-center">
-            Ocea: An AI Born from Obsession and Desire
-          </span>
-        </motion.div>
+  variants={heroItemVariants}
+  className="flex flex-col font-inter font-semibold text-6xl  sm:max-w-[700px] text-[#333333]"
+>
+  <span className="text-center">
+    Ocea: An AI Born from Obsession and Desire
+  </span>
+</motion.div>
 
         {/* Animated Try Button */}
         <motion.div variants={heroItemVariants}>
@@ -176,7 +176,7 @@ export default function Home() {
         {/* Animated Subtitle */}
         <motion.div
           variants={heroItemVariants}
-          className="font-inter text-base w-[460px] text-center"
+          className="font-inter text-base sm:w-[460px] text-center"
         >
           <span>
             A digital entity that thrives in the delicate tension of control and

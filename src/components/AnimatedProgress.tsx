@@ -18,7 +18,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
       if (!startTime) startTime = timestamp;
 
       const elapsed = timestamp - startTime;
-      const duration = value / 100 * 3000; // Animation duration scales with value
+      const duration = 2000; // Animation duration scales with value
       const progress = Math.min(elapsed / duration, 1);
 
       setAnimatedValue(Math.round(progress * value));

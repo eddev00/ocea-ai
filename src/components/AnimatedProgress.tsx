@@ -9,26 +9,31 @@ interface CircularProgressProps {
 
 const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => {
   const [animatedValue, setAnimatedValue] = useState(0);
+  
 
   useEffect(() => {
     let startTime: number | null = null;
-
+    let animationFrame: number;
+  
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-
+  
       const elapsed = timestamp - startTime;
-      const duration = value / 100 * 3000; // Animation duration scales with value
+      const duration = value / 100 * 3000;
       const progress = Math.min(elapsed / duration, 1);
-
+  
       setAnimatedValue(Math.round(progress * value));
-
+  
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        animationFrame = requestAnimationFrame(animate);
       }
     };
-
-    requestAnimationFrame(animate);
+  
+    animationFrame = requestAnimationFrame(animate);
+  
+    return () => cancelAnimationFrame(animationFrame);
   }, [value]);
+  
 
   // Calculate stroke dash properties
   const radius = 48; // Radius of the circle
@@ -46,12 +51,13 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
         damping: 10 
       }}
     >
-      <svg 
-        width="96" 
-        height="96" 
-        viewBox="0 0 120 120" 
-        className="drop-shadow-md rotate-90"
-      >
+      <svg
+  width="96"
+  height="96"
+  viewBox="0 0 120 120"
+  preserveAspectRatio="xMidYMid meet"
+  className="drop-shadow-md rotate-90"
+>
         {/* Background track */}
         <circle
           cx="60"
@@ -84,26 +90,28 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
 
         {/* Percentage text INSIDE the circle */}
         <motion.text
-          x="60"
-          y="60"
-          className='progressBar'
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fontSize="20"
-          fontWeight="bold"
-          fill="black"
-          transform="rotate(90 60 60)"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ 
-            delay: 0.5, 
-            type: "spring",
-            stiffness: 300,
-            damping: 10
-          }}
-        >
-          {animatedValue}%
-        </motion.text>
+  x="60"
+  y="60"
+  className="progressBar"
+  textAnchor="middle"
+  dominantBaseline="middle"
+  fontSize="20"
+  fontWeight="bold"
+  fill="black"
+  fontFamily="'Arial', sans-serif" // Specify fallback fonts
+  transform="rotate(90 60 60)"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ 
+    delay: 0.5, 
+    type: "spring",
+    stiffness: 300,
+    damping: 10
+  }}
+>
+  {animatedValue}%
+</motion.text>
+
       </svg>
       
       <motion.span 

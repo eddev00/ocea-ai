@@ -47,13 +47,14 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
         damping: 10 
       }}
     >
-      <svg
+     <svg
   width="96"
   height="96"
-  viewBox="0 0 120 120"
+  viewBox="0 0 120 120" // Matches dimensions for proper scaling
   preserveAspectRatio="xMidYMid meet"
   className="drop-shadow-md rotate-90"
 >
+
         {/* Background track */}
         <circle
           cx="60"
@@ -88,14 +89,13 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
         <motion.text
   x="60"
   y="60"
-  className="progressBar"
   textAnchor="middle"
   dominantBaseline="middle"
-  fontSize="20"
+  fontSize="1.5em" // Use em-based units for better scaling
   fontWeight="bold"
   fill="black"
-  fontFamily="'Arial', sans-serif" // Specify fallback fonts
-  transform="rotate(90 60 60)"
+  fontFamily="'Arial', sans-serif"
+  transform="rotate(90 60 60)" // Rotate text to match circle rotation
   initial={{ opacity: 0, scale: 0.8 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ 
@@ -104,9 +104,11 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
     stiffness: 300,
     damping: 10
   }}
+  style={{ pointerEvents: 'none',rotate: '-90deg' }} // Prevent interaction issues
 >
   {animatedValue}%
 </motion.text>
+
 
       </svg>
       

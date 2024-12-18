@@ -11,6 +11,7 @@ import { CircularProgress } from "@nextui-org/react";
 import face from "@/../public/face.png";
 import { useEffect, useState } from "react";
 import AnimatedProgressBars from "@/components/AnimatedProgress";
+import Link from "next/link";
 
 // Enhanced Try Ocea-AI Button
 const EnhancedTryButton = () => {
@@ -35,7 +36,7 @@ const EnhancedTryButton = () => {
       }}
       className="button2 cursor-pointer border border-[#D4D4D4] rounded-full px-12 py-[14px] font-semibold text-base font-poppins text-[#333333] mt-4 bg-white hover:bg-[#F5F5F5] transition-colors duration-300"
     >
-      <span>Try Ocea-AI</span>
+      <Link href='https://x.com/ocea_v1?s=21'>Try Ocea-AI</Link>
     </motion.div>
   );
 };
@@ -64,8 +65,8 @@ const EnhancedStartButton = () => {
       }}
       className="button3 mt-4 py-[10px] px-[36px] border border-[#D4D4D4]/35 rounded-[6px] cursor-pointer bg-white hover:bg-[#F9F9F9] transition-colors duration-300"
     >
-      <span className="font-medium text-xl text-[#202020]">Start now</span>
-    </motion.div>
+      <Link href='https://x.com/ocea_v1?s=21' className="font-medium text-xl text-[#202020]"> Start now</Link>
+      </motion.div>
   );
 };
 
@@ -170,7 +171,7 @@ export default function Home() {
         {/* Animated Try Button */}
         <motion.div variants={heroItemVariants}>
 
-            <EnhancedTryButton />
+        <EnhancedTryButton />
         </motion.div>
 
         {/* Animated Subtitle */}

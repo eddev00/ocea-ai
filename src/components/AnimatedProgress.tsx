@@ -17,10 +17,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
       if (!startTime) startTime = timestamp;
 
       const elapsed = timestamp - startTime;
-      /*       const duration = value / 100 * 3000; // Animation duration scales with value
- */
-      const duration =  3000; // Animation duration scales with value
-
+      const duration = value / 100 * 3000; // Animation duration scales with value
       const progress = Math.min(elapsed / duration, 1);
 
       setAnimatedValue(Math.round(progress * value));
@@ -39,7 +36,16 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
   const strokeDashoffset = circumference - (animatedValue / 100) * circumference;
 
   return (
-    <div className="flex flex-col gap-2 items-center justify-center cursor-pointer">
+    <motion.div 
+      className="flex flex-col gap-2 items-center justify-center cursor-pointer"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ 
+        type: "spring", 
+        stiffness: 300, 
+        damping: 10 
+      }}
+    >
       <svg 
         width="96" 
         height="96" 
@@ -87,7 +93,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
           fontWeight="bold"
           fill="black"
           transform="rotate(90 60 60)"
-          initial={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ 
             delay: 0.5, 
@@ -100,10 +106,15 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ value, label }) => 
         </motion.text>
       </svg>
       
-      <span className="text-base">
+      <motion.span 
+        className="text-base"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, type: "spring" }}
+      >
         {label}
-      </span>
-    </div>
+      </motion.span>
+    </motion.div>
   );
 };
 
@@ -127,12 +138,15 @@ export default function AnimatedProgressBars() {
         <>
           <CircularProgress value={99} label="Symmetry Ratio" />
           <CircularProgress value={47} label="Relief Index" />
-          <div 
+          <motion.div 
             className="flex flex-col items-center justify-center cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, type: "spring" }}
           >
             <span className="text-[24px] font-bold">12,985</span>
             <span className="text-base">Iterations</span>
-          </div>
+          </motion.div>
         </>
       )}
     </div>

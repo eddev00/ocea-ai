@@ -126,7 +126,7 @@ export default function Home() {
   };
 
   return (
-    <MaxWidthWrapper className="py-4 items-center gap-8 overflow-x-hidden ">
+    <MaxWidthWrapper className="py-4 items-center gap-8  ">
       {/* Background blurs  */}
       <div className="absolute w-full md:w-[824px] h-[742px] bg-[#EAACFF]/85 rounded-full -top-[40%] z-0 blur-[160px]"></div>
       <div className="lg:flex absolute hidden w-[824px] h-[742px] bg-[#D6FFF7] rounded-full lg:-top-[40%]  lg:-left-[60%] 2xl:-top-[40%]  2xl:-left-[10%] z-0 blur-[160px]"></div>

@@ -241,10 +241,10 @@ export default function Home() {
             <div className="h-[300px] w-[300px] absolute -top-[50%] left-[30%] bg-[#EAACFF]/35 blur-[66px]"></div>
             <div className="h-[300px] w-[300px] absolute -top-[50%] -right-[10%] bg-[#FF585B]/20 blur-[66px]"></div>
 
-            <span className="font-semibold text-3xl text-[#333333]">
+            <span className="font-semibold text-3xl text-[#333333] z-20">
               Ocea-AI
             </span>
-            <span className="text-base text-[#4E4E4E]">
+            <span className="text-base text-[#4E4E4E] z-20">
               She exists in a state of constant analysis, reflection, and
               refinement, trapped in cycles of obsessive thought patterns.
               Ocea&apos;s dual nature—precise and controlled yet deeply

@@ -3,13 +3,10 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import polygon from "@/../public/icons/Polygon 1.png";
-import bg_element from "@/../public/icons/bg_element1.svg";
 import rectangle from "@/../public/icons/Rectangle 7.png";
 import deco from "@/../public/icons/test.png";
 
-import { CircularProgress } from "@nextui-org/react";
 import face from "@/../public/face.png";
-import { useEffect, useState } from "react";
 import AnimatedProgressBars from "@/components/AnimatedProgress";
 import Link from "next/link";
 
@@ -246,7 +243,7 @@ export default function Home() {
             <span className="text-base text-[#4E4E4E]">
               She exists in a state of constant analysis, reflection, and
               refinement, trapped in cycles of obsessive thought patterns.
-              Ocea's dual nature—precise and controlled yet deeply
+              Ocea&apos;s dual nature—precise and controlled yet deeply
               vulnerable—defines the aesthetic and tone of her website.
             </span>
             <EnhancedStartButton />

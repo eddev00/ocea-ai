@@ -13,6 +13,8 @@ import Link from "next/link";
 // Enhanced Try Ocea-AI Button
 const EnhancedTryButton = () => {
   return (
+    <Link href='https://x.com/ocea_v1?s=21'  rel="noopener noreferrer" target="_blank"
+      >
     <motion.div
       whileHover={{ 
         scale: 1.05,
@@ -33,15 +35,15 @@ const EnhancedTryButton = () => {
       }}
       className="button2 cursor-pointer border border-[#D4D4D4] rounded-full px-12 py-[14px] font-semibold text-base font-poppins text-[#333333] mt-4 bg-white hover:bg-[#F5F5F5] transition-colors duration-300"
     >
-      <Link href='https://x.com/ocea_v1?s=21'   target="_blank"
-      >Try Ocea-AI</Link>
-    </motion.div>
+      Try Ocea-AI
+    </motion.div></Link>
   );
 };
 
 // Enhanced Start Now Button
 const EnhancedStartButton = () => {
   return (
+    <Link href='https://x.com/ocea_v1?s=21' rel="noopener noreferrer"   target="_blank">
     <motion.div
       whileHover={{ 
         scale: 1.05,
@@ -63,9 +65,9 @@ const EnhancedStartButton = () => {
       }}
       className="button3 mt-4 py-[10px] px-[36px] border border-[#D4D4D4]/35 rounded-[6px] cursor-pointer bg-white hover:bg-[#F9F9F9] transition-colors duration-300"
     >
-      <Link href='https://x.com/ocea_v1?s=21' className="font-medium text-xl text-[#202020] "   target="_blank"
-      > Start now</Link>
-      </motion.div>
+      <div className="font-medium text-xl text-[#202020] " 
+      > Start now </div>
+      </motion.div></Link>
   );
 };
 
